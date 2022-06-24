@@ -1,0 +1,99 @@
+using Gtk 4.0;
+using Adw 1;
+
+template MainWindow : Adw.ApplicationWindow {
+  width-request: "800";
+  height-request: "500";
+  title: _("86Box Manager");
+
+  Adw.Leaflet leaflet {
+    //can-swipe-back: true;
+
+    Box {
+      orientation: vertical;
+
+      Adw.HeaderBar {
+        title-widget: Adw.WindowTitle {
+          title: "VMs";
+        };
+      }
+
+      ListBox {
+        selection-mode: single;
+        hexpand: true;
+        margin-top: 24;
+        margin-bottom: 24;
+        margin-start: 12;
+        margin-end: 12;
+
+        styles ["boxed-list"]
+
+        Adw.ActionRow {
+          title: "Windows 98";
+        }
+
+        Adw.ActionRow {
+          title: "Windows 95";
+        }
+
+        Adw.ActionRow {
+          title: "Windows XP";
+        }
+      }
+    }
+
+    Adw.LeafletPage {
+      navigatable: false;
+      Separator {}
+    }
+
+    Box {
+      orientation: vertical;
+
+      Adw.HeaderBar {
+        Button {
+          icon-name: "go-previous-symbolic";
+        }
+        title-widget: Adw.WindowTitle title {
+          title: "Select a VM";
+        };
+      }
+
+      ListBox {
+        selection-mode: single;
+        hexpand: true;
+        margin-top: 24;
+        margin-bottom: 24;
+        margin-start: 12;
+        margin-end: 12;
+
+        styles ["boxed-list"]
+
+        Adw.ExpanderRow {
+          title: "The Verge - Article 1";
+
+          Label {
+            label: "Article 1 summary placed in a handy label widget";
+            halign: start;
+            margin-top: 24;
+            margin-bottom: 24;
+            margin-start: 12;
+            margin-end: 12;
+          }
+        }
+
+        Adw.ExpanderRow {
+          title: "The Verge - Article 2";
+        }
+
+        Adw.ExpanderRow {
+          title: "The Verge - Article 3";
+        }
+
+        Adw.ExpanderRow {
+          title: "The Verge - Article 4";
+        }
+      }
+    }
+  }
+}
