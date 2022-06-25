@@ -19,7 +19,7 @@ pub fn main() {
         .expect("Failed to register resources.");
 
     let application = Application::builder()
-        .application_id("leap.86boxmgr")
+        .application_id("leap._86box.manager")
         .build();
 
     application.connect_activate(build_ui);
